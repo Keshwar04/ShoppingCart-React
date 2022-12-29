@@ -10,7 +10,7 @@ const Product = ({ data }) => {
 
   return (
     <div className="product">
-      <img src={productImage} width="200px" alt="error" />
+      <img src={productImage} width="200px" height='200px' alt="error" />
       <div className="desc">
         <p>
           <b>{productName}</b>
