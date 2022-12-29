@@ -1,5 +1,12 @@
+import { useContext } from "react";
+import { shoppingContext } from "../../Context/ContextProvider";
+
 const Product = ({ data }) => {
   const { id, productName, productImage, price } = data;
+
+  const { addToCart, cartItems } = useContext(shoppingContext);
+
+  const cartItemAmount = cartItems[id];
 
   return (
     <div className="product">
@@ -8,8 +15,10 @@ const Product = ({ data }) => {
         <p>
           <b>{productName}</b>
         </p>
-        <p>{price}</p>
-        <button className="addToCartBttn">Add To Cart</button>
+        <p>&#8377;{price}</p>
+        <button className="addToCartBttn" onClick={() => addToCart(id)}>
+          Add To Cart{cartItemAmount > 0 ? ` ${cartItemAmount}` : null}
+        </button>
       </div>
     </div>
   );
