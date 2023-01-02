@@ -6,7 +6,7 @@ const CartProducts = ({ data }) => {
   const { id, productName, productImage, price } = data;
   return (
     <div className="cartItem">
-      <img src={productImage} />
+      <img src={productImage} height='180px' alt='error' />
       <div className="description">
         <p>
           <b>{productName}</b>
